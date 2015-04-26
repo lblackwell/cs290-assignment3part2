@@ -1,0 +1,84 @@
+* {
+	font-family: Helvetica,sans-serif;
+}
+
+a {
+	color: #3399FF;
+}
+
+a:hover{
+	color: #82CAFA;
+}
+
+div {
+	width: 45%;
+	float:left;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+dt {
+	font-weight: 500;
+}
+
+h2 {
+	margin-bottom: -10px;
+}
+
+input[type="button"] {
+	border-radius: 5px;
+	background-color: #3399FF;
+	color: #FFFFFF;
+	border: none;
+}
+
+input:hover[type="button"] {
+	border-radius: 5px;
+	background-color: #157DEC;
+	color: #FFFFFF;
+	border: none;
+}
+
+ul {
+	background-color: #F0F8FF;
+	overflow: hidden;
+	border-radius: 10px;
+	list-style-type: none;
+}
+
+tfoot {
+	text-align: center;
+}
+
+.faveButton{
+	border-radius: 5px;
+	background-color: #3399FF;
+	color: #FFFFFF;
+	border-color: #E5E4E2;
+	border: none;
+	margin-right: 10px;
+}
+
+.faveButton:hover{
+	border-radius: 5px;
+	background-color: #157DEC;
+	color: #FFFFFF;
+	border-color: #E5E4E2;
+	border: none;
+	margin-right: 10px;
+}
+
+.rmFaveButton{
+	border-radius: 5px;
+	border-color: #E5E4E2;
+	border: none;
+	margin-right: 10px;
+}
+
+.rmFaveButton:hover{
+	background-color: #C11B17;
+	border-radius: 5px;
+	border-color: #E5E4E2;
+	border: none;
+	margin-right: 10px;
+}
