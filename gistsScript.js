@@ -131,7 +131,7 @@ function fetchData()
 				{
 					for(var o = 0; o < fetchedGists.length; o)
 					{
-						if(fetchedGists[o].url === favoritesArrary[m].url)
+						if(fetchedGists[o].html_url === favoritesArrary[m].html_url)
 						{
 							fetchedGists.splice(o, 1);
 						}
@@ -211,7 +211,7 @@ function displayGists()
 			// Get relevant information
 			var targetLI = addToFavorites.target.parentElement.parentElement.parentElement;
 			var targetDesc = fetchedGists[targetLI.id].description;
-			var targetURL = fetchedGists[targetLI.id].url;
+			var targetURL = fetchedGists[targetLI.id].html_url;
 
 			var fave = new Gist(targetDesc, targetURL);
 			favoritesArrary.push(fave);
@@ -227,8 +227,8 @@ function displayGists()
 
 		// Create link element
 		var urlLink = document.createElement('a');
-		urlLink.href = fetchedGists[j].url;
-		var urlText = document.createTextNode(fetchedGists[j].url);
+		urlLink.href = fetchedGists[j].html_url;
+		var urlText = document.createTextNode(fetchedGists[j].html_url);
 		urlLink.appendChild(urlText);
 
 		// Set up description element
@@ -273,7 +273,7 @@ function displayFaves()
 		var urlDD = document.createElement('dd');
 
 		// Assign unique ID to each part
-		newLI.setAttribute('id', favoritesArrary[k].url);
+		newLI.setAttribute('id', favoritesArrary[k].html_url);
 		newDL.setAttribute('id', (favoritesArrary[k].id + '-dl'));
 		descDT.setAttribute('id', (favoritesArrary[k].id + '-descDT'));
 		urlDD.setAttribute('id', (favoritesArrary[k].id + '-urlDD'));
@@ -286,7 +286,7 @@ function displayFaves()
 
 		// Create and set up remove from favorites button
 		var rmFaveButton = document.createElement('button');
-		rmFaveButton.setAttribute('id', (favoritesArrary[k].url + '-rmFaveBut'));
+		rmFaveButton.setAttribute('id', (favoritesArrary[k].html_url + '-rmFaveBut'));
 		rmFaveButton.setAttribute('class', 'rmFaveButton');
 		rmFaveButton.textContent = "-";
 		rmFaveButton.onclick = function(rmFromFaves)
@@ -297,7 +297,7 @@ function displayFaves()
 			// Remove from favorites array and update local storage
 			for(var l = 0; l < favoritesArrary.length; l++)
 			{
-				if(favoritesArrary[l].url === targetLI.id)
+				if(favoritesArrary[l].html_url === targetLI.id)
 				{
 					favoritesArrary.splice(l, 1);
 				}
@@ -310,8 +310,8 @@ function displayFaves()
 
 		// Create link element
 		var urlLink = document.createElement('a');
-		urlLink.href = favoritesArrary[k].url;
-		var urlText = document.createTextNode(favoritesArrary[k].url);
+		urlLink.href = favoritesArrary[k].html_url;
+		var urlText = document.createTextNode(favoritesArrary[k].html_url);
 		urlLink.appendChild(urlText);
 
 		// Set up description element
@@ -370,7 +370,7 @@ function makeFavesEntry(targetDesc, targetURL)
 		// Remove from favorites array and update local storage
 		for(var l = 0; l < favoritesArrary.length; l++)
 		{
-			if(favoritesArrary[l].url === targetLI.id)
+			if(favoritesArrary[l].html_url === targetLI.id)
 			{
 				favoritesArrary.splice(l, 1);
 			}

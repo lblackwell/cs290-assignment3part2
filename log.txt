@@ -1,0 +1,44 @@
+Start: Fri, 24 Apr 2015 10:32:29 -0800
+End: Fri, 24 Apr 2015 16:56:39 -0800
+Tasks: - Started Part 2
+       - Created fetchData function
+       - Got fetchData working
+       - Finished Part 1!
+       - Finished creation of list of recent gists with working hyperlinks
+       - Styled Part 2 page a little
+       - Started working on returning multiple pages
+
+Start: Fri, 24 Apr 2015 18:45:03 -0800
+End: Fri, 24 Apr 2015 19:03:13 -0800
+Tasks: - Started working on favorites list
+
+Start: Fri, 24 Apr 2015 21:29:56 -0800
+End: Fri, 24 Apr 2015 23:00:00 -0800
+Tasks: - Styled some of Part 2 page
+       - Worked on favorites list some more
+
+Start: Sat, 25 Apr 2015 07:19:21 -0800
+End: Sat, 25 Apr 2015 11:40:57 -0800
+Tasks: - Continued working on favorites list
+       - Took out search terms field, changed number of pages input to dropdown menu
+       - Continued working on returning multiple pages
+       - Successfully returned correct number of gists! Moved on back to favorites
+       - Got gists moving from gist list to favorites list
+       - Worked on putting remove from favorites button in the appropriate spot
+
+Start: Sun, 26 Apr 2015 08:53:36 -0800
+End: Sun, 26 Apr 2015 14:34:08 -0800
+Tasks: - Restarted .js file from scratch after attending CS290 study session last night
+       - Successfully implemented AJAX request
+       - Successfully got fetch gists to display on screen
+       - Implemented favorites list (without local storage)
+       - Worked on adding local storage support for favorites
+       - Successfully added to local storage
+       - Got remove favorites working with local storage
+
+Start: Sun, 26 Apr 2015 17:03:12 -0800
+End:
+Tasks: - Started working on language search
+       - Completed language search
+       - Began working on uploading live version
+       - Finished uploading to web.engr and Github. Done!
