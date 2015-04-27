@@ -1,3 +1,5 @@
+Continued from Part 1
+
 Start: Fri, 24 Apr 2015 10:32:29 -0800
 End: Fri, 24 Apr 2015 16:56:39 -0800
 Tasks: - Started Part 2
