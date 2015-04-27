@@ -10,6 +10,10 @@ a:hover{
 	color: #82CAFA;
 }
 
+body {
+	background-color: #FEFCFF;
+}
+
 div {
 	width: 45%;
 	float:left;
@@ -30,6 +34,7 @@ input[type="button"] {
 	background-color: #3399FF;
 	color: #FFFFFF;
 	border: none;
+	font-size: 105%
 }
 
 input:hover[type="button"] {
@@ -81,4 +86,12 @@ tfoot {
 	border-color: #E5E4E2;
 	border: none;
 	margin-right: 10px;
+}
+
+.languages {
+	font-size: small;
+}
+
+#anyLangTD {
+	text-align: center;
 }

@@ -17,6 +17,32 @@ function fetchData()
 	var numPagesSelect = document.getElementById('numPages');
 	var numGists = (numPagesSelect.options[numPagesSelect.selectedIndex].value) * 30;
 
+	var getPython = false;
+	if(document.getElementById('pythonBox').checked)
+	{
+		getPython = true;
+	}
+
+	var getJSON = false;
+	if(document.getElementById('jsonBox').checked)
+	{
+		getJSON = true;
+	}
+
+	var getJavascript = false;
+	if(document.getElementById('javascriptBox').checked)
+	{
+		getJavascript = true;
+	}
+
+	var getSQL = false;
+	if(document.getElementById('sqlBox').checked)
+	{
+		getSQL = true;
+	}
+
+	var batchOfGists = [];
+
 	while(numGists > 0)
 	{
 		if(numGists > 150)
@@ -64,7 +90,55 @@ function fetchData()
 			if(request.readyState == 4 && request.status == 200)
 			{
 				var response = request.responseText;
-				fetchedGists = (JSON.parse(response));
+				batchOfGists = (JSON.parse(response));
+
+				// if(anyLanguage === true)
+				if(getPython === false && getJSON === false && getJavascript === false && getSQL === false)
+				{
+					fetchedGists = batchOfGists;
+				}
+
+				else
+				{
+					for(var n = 0; n < batchOfGists.length; n++)
+					{
+						for(var property in batchOfGists[n].files)
+						{
+							if(batchOfGists[n].files.hasOwnProperty(property))
+							{
+								if(batchOfGists[n].files[property].language)
+								{
+									var gistLang = batchOfGists[n].files[property].language;
+
+									// TEST PRINT
+									console.log(batchOfGists[n].description + ": " + gistLang);
+
+									if((getPython === true && gistLang === 'Python') || (getJSON === true && gistLang === 'JSON')
+										|| (getJavascript === true && gistLang === 'JavaScript') || (getSQL === true && gistLang === 'SQL'))
+									{
+										fetchedGists.push(batchOfGists[n]);
+									}
+								}
+							}
+						}
+					}
+				}
+
+				// TEST PRINT
+				console.log("Fetched gists: " + fetchedGists);
+
+				for(var m = 0; m < favoritesArrary.length; m++)
+				{
+					for(var o = 0; o < fetchedGists.length; o)
+					{
+						if(fetchedGists[o].url === favoritesArrary[m].url)
+						{
+							fetchedGists.splice(o, 1);
+						}
+						o++;
+					}
+				}
+
 				displayGists();
 			}
 		};
@@ -90,6 +164,19 @@ function urlStringify(origString)
 function displayGists()
 {
 	var gistsDiv = document.getElementById('gists');
+
+	if(fetchedGists.length === 0 && !document.getElementById('noGists'))
+	{
+		var noGists = document.createElement('span');
+		noGists.setAttribute('id', 'noGists');
+		noGists.textContent = "No gists to display.";
+		gistsDiv.appendChild(noGists);
+	}
+
+	else if(document.getElementById('noGists'))
+	{
+		gistsDiv.removeChild(document.getElementById('noGists'));
+	}
 
 	var list = document.createElement('ul');
 	list.setAttribute('id', 'gistList');
@@ -133,6 +220,9 @@ function displayGists()
 
 			// Send to list building function
 			makeFavesEntry(targetDesc, targetURL);
+
+			// Remove from gist list
+			targetLI.parentElement.removeChild(targetLI);
 		};
 
 		// Create link element

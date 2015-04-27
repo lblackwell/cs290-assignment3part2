@@ -20,6 +20,19 @@
 					<option value="5">5</option>
 				</select></td>
 			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="languages" value="python" id="pythonBox" /><span class="languages"> Python</span><br>
+					<input type="checkbox" name="languages" value="json" id="jsonBox" /><span class="languages"> JSON</span>
+				</td>
+				<td>
+					<input type="checkbox" name="languages" value="javascript" id="javascriptBox" /><span class="languages"> Javascript</span><br>
+					<input type="checkbox" name="languages" value="sql" id="sqlBox" /><span class="languages"> SQL</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="anyLangTD"><span class="languages">To search for any language, leave all boxes unchecked.</span></td>
+			</tr>
 			<tfoot>
 				<tr>
 					<td colspan="2"><input type="button" value="Fetch Gists" onclick="fetchData()" /></td>
